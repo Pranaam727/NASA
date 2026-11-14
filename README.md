@@ -36,7 +36,22 @@ AstroCare is an advanced aerospace biomedical intelligence platform designed to 
   - Mission context comparison and risk intelligence.
 - **Archive:** `ai-intelligence.zip`
 
-### 4. `astrocare-p15-dataset-intelligence/` (P15 Module)
+
+### 4. `astrocare-p14-risk-intelligence/` (P14 Module)
+- **Module Identifier:** `astrocare-p14-risk-intelligence`
+- **Core Technology:** React 18, TypeScript, Tailwind CSS, Lucide Icons, Vite, Vitest.
+- **Capabilities:**
+  - NASA Human Research Program (HRP) 8 core risk categories (Radiation, Cardiovascular, Bone, Muscle, Immune, Sleep, Behavior, SANS).
+  - NASA Evidence Library with verified DOIs, NTRS accession numbers, and strict human vs. pre-clinical classification.
+  - NASA Open Science Data Repository (OSDR) study discovery and live REST search adapter.
+  - Flight-operational and analog-validated countermeasures catalog with explicit residual risk disclosures.
+  - Interactive mission risk analysis & side-by-side comparative architecture evaluation (LEO, Lunar Gateway, Artemis Base, Mars Conjunction).
+  - Research-grounded qualitative evaluations without fabricated numerical illness probabilities.
+  - 13/13 passing Vitest tests verifying all service layers, data filters, and risk comparison engines.
+- **Archive:** `AstroCare_P14_Risk_Intelligence.zip`
+- **Integration Guide:** `astrocare-p14-risk-intelligence/INTEGRATION_GUIDE.md`
+
+### 5. `astrocare-p15-dataset-intelligence/` (P15 Module)
 - **Module Identifier:** `astrocare-p15-dataset-intelligence`
 - **Core Technology:** React 19, TypeScript, Tailwind CSS, Recharts, Vite, Vitest.
 - **Capabilities:**
