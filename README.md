@@ -1,136 +1,94 @@
-# AstroCare Aerospace Biomedical Intelligence Platform
+# ASTROCARE
+**Aerospace Biomedical Intelligence & Mission Health Monitoring Platform**
 
-AstroCare is an advanced aerospace biomedical intelligence platform designed to monitor, understand, and research astronaut health during spaceflight missions.
+*Autonomous Long-Duration Space Mission Health Architecture & NASA Research Intelligence*
 
-## Platform Modules
+---
 
-### 1. `astrocare-p10-radiation/` (P10 Module)
-- **Module Identifier:** `astrocare-p10-radiation`
-- **Core Technology:** React 18, TypeScript, Tailwind CSS, Recharts, Zod, Vite.
-- **Capabilities:**
-  - Space radiation dosimetry and SPE (Solar Particle Event) early warning.
-  - NASA RadLab flight archive integration and historical mission dosimetric comparison.
-  - NASA Open Science Data Repository (OSDR) radiation biology research exploration.
-  - Cumulative microgravity and galactic cosmic radiation (GCR) exposure tracking with NASA HRP limits.
-  - 143/143 passing tests verifying analytics engines and biological dose conversion.
-- **Archive:** `AstroCare_P10_Radiation_Intelligence.zip`
+## 1. Platform Overview
 
-### 2. `astrocare-p12-immune/` (P12 Module)
-- **Module Identifier:** `astrocare-p12-immune`
-- **Core Technology:** React 18, TypeScript, Tailwind CSS, Recharts, Vite, Vitest.
-- **Capabilities:**
-  - Spaceflight immune dysregulation and cytokine shift monitoring.
-  - Inflammatory biomarker tracking (IL-6, TNF-alpha, IFN-gamma, CRP).
-  - In-flight laboratory specimen logistics, sample viability tracking, and cold-chain integrity.
-  - Longitudinal immune response analytics and NASA biomedical literature references.
-  - Integration adapters and component exports for mission control cockpit embedding.
-- **Archive:** `AstroCare_P12_Immune_Intelligence.zip`
+AstroCare is an integrated aerospace biomedical intelligence platform designed to monitor, analyze, and research astronaut health during long-duration deep space exploration missions (e.g., Artemis lunar base operations, Deep Space Gateway, and Mars transit).
 
-### 3. `ai-intelligence/` (P13 Module)
-- **Module Identifier:** `ai-intelligence`
-- **Core Technology:** React 19, TypeScript, Tailwind CSS, Vite, Gemini API client with fallback simulation.
-- **Capabilities:**
-  - Biomedical clinical conversational assistant.
-  - Health data interpretation (cardiovascular, musculoskeletal, radiation, sleep, immune).
-  - NASA research summarizer with verified citations.
-  - Mission context comparison and risk intelligence.
-- **Archive:** `ai-intelligence.zip`
+The platform bridges operational clinical monitoring and scientific research by combining a high-fidelity **Virtual Sensor & Telemetry Simulation Engine**, a **Clinical Reasoning Copilot**, **Space Radiation Intelligence**, and specialized multi-omics and risk analytics modules.
 
+---
 
-### 4. `astrocare-p14-risk-intelligence/` (P14 Module)
-- **Module Identifier:** `astrocare-p14-risk-intelligence`
-- **Core Technology:** React 18, TypeScript, Tailwind CSS, Lucide Icons, Vite, Vitest.
-- **Capabilities:**
-  - NASA Human Research Program (HRP) 8 core risk categories (Radiation, Cardiovascular, Bone, Muscle, Immune, Sleep, Behavior, SANS).
-  - NASA Evidence Library with verified DOIs, NTRS accession numbers, and strict human vs. pre-clinical classification.
-  - NASA Open Science Data Repository (OSDR) study discovery and live REST search adapter.
-  - Flight-operational and analog-validated countermeasures catalog with explicit residual risk disclosures.
-  - Interactive mission risk analysis & side-by-side comparative architecture evaluation (LEO, Lunar Gateway, Artemis Base, Mars Conjunction).
-  - Research-grounded qualitative evaluations without fabricated numerical illness probabilities.
-  - 13/13 passing Vitest tests verifying all service layers, data filters, and risk comparison engines.
-- **Archive:** `AstroCare_P14_Risk_Intelligence.zip`
-- **Integration Guide:** `astrocare-p14-risk-intelligence/INTEGRATION_GUIDE.md`
+## 2. Platform Architecture & Modules
 
-### 5. `astrocare-p15-dataset-intelligence/` (P15 Module)
-- **Module Identifier:** `astrocare-p15-dataset-intelligence`
-- **Core Technology:** React 19, TypeScript, Tailwind CSS, Recharts, Vite, Vitest.
-- **Capabilities:**
-  - Direct NASA Open Science Data Repository (OSDR) integration and metadata exploration.
-  - Multi-omics dataset indexing across human spaceflight, animal models, and cell cultures.
-  - Strict biological population classification preventing human/model organism data conflation.
-  - Longitudinal multi-study comparison and observational telemetry cross-referencing.
-- **Archive:** `AstroCare_P15_NASA_Dataset_Intelligence.zip`
+The repository unifies the operational **AstroCare Core Platform (P01–P09)** with specialized **Extended Research & Readiness Modules (P10–P21)**:
 
-### 5. `astrocare-p16-scientific-provenance/` (P16 Module)
-- **Module Identifier:** `astrocare-p16-scientific-provenance`
-- **Core Technology:** React 19, TypeScript, Tailwind CSS, Lucide Icons, Vite, Vitest.
-- **Capabilities:**
-  - End-to-end scientific provenance and citation intelligence for all platform insights.
-  - Structured registry of NASA Technical Reports, peer-reviewed journals, and OSDR accessions.
-  - Evidence Quality Matrix, duplicate detection, and insight lineage graph visualization.
-  - Automated report builder with exportable scientific audit trails.
-- **Archive:** `AstroCare_P16_Scientific_Provenance.zip`
+### Part A: Core Interactive Platform (`P01`–`P09`)
+Located at project root (`src/`, `public/`, `supabase/`, `docs/`):
+- **P01–P06: Core Telemetry & Simulation Engine**: 7 mission scenarios (nominal, hypoxia, SPE storm, exercise strain, sleep disruption, fever, cardiac arrhythmia), 50Hz ECG oscilloscope generator, biometric thresholds, and baseline delta comparators.
+- **P07: AI Health Intelligence & Gemini Integration**: Grounded context builder, deterministic algorithmic provider, Gemini Edge Function proxy, anomaly explanation panel, and trend interpreter.
+- **P08: Clinical Reasoning Copilot & Medical Decision Support**: Flight surgeon situation dashboard, multi-metric correlation engine, diagnostic investigation workspace, and prioritized action checklists.
+- **P09: Space Radiation Intelligence & Biological Risk Analytics**: NASA Permissible Exposure Limit (PEL) career tracking, organ-specific vulnerability matrix (BFO, CNS, Cardiovascular, Ocular), and Beer-Lambert shielding mass attenuation simulator.
+- **Verification Suite**: 236/236 passing automated unit and integration tests.
 
-### 6. `astrocare-p19-testing/` (P19 Module)
-- **Module Identifier:** `astrocare-p19-testing` (`@astrocare/qa-framework`)
-- **Core Technology:** TypeScript 5.5, Vitest, JSDOM, Vite.
-- **Capabilities:**
-  - Comprehensive quality assurance framework covering unit, integration, and E2E aerospace workflows.
-  - NASA API & OSDR live/mock connectivity and data validation adapters.
-  - Biomedical calculation validators (radiation dose, cardiovascular metrics, circadian rhythm).
-  - Security scanning (OWASP, PHI quarantine, credential protection) and performance benchmarking.
-  - Automated HTML/JSON/CSV QA report generators.
-- **Archive:** `AstroCare_P19_Comprehensive_Testing.zip`
+### Part B: Extended Aerospace Research Modules (`P10`–`P21`)
+- **`astrocare-p10-radiation/` (P10 Module)**: NASA RadLab flight archive integration, historical mission dosimetric comparison, and OSDR radiation biology exploration.
+- **`astrocare-p12-immune/` (P12 Module)**: Spaceflight immune dysregulation, cytokine shift monitoring (IL-6, TNF-α, IFN-γ, CRP), and sample cold-chain logistics.
+- **`ai-intelligence/` (P13 Module)**: Biomedical conversational assistant with multi-axis health interpretation and research summarizer.
+- **`astrocare-p14-risk-intelligence/` (P14 Module)**: NASA Human Research Program (HRP) 8 core risk categories, evidence library with DOIs, and OSDR live search.
+- **`astrocare-p15-dataset-intelligence/` (P15 Module)**: NASA Open Science Data Repository (OSDR) multi-omics indexing and population classification.
+- **`astrocare-p16-scientific-provenance/` (P16 Module)**: Citation lineage graph, NASA Technical Report registry, and evidence quality auditing.
+- **`astrocare-p19-testing/` (P19 Module)**: Aerospace QA test framework with biomedical calculation validators and security scans.
+- **`astrocare-p20-ux/` (P20 Module)**: Unified mission control cockpit design system, expedition telemetry downlink, and WCAG 2.2 AA accessibility.
+- **`astrocare-p21-readiness/` (P21 Module)**: Hackathon deployment readiness dashboard, 21-module registry, and multi-target deployment manifests.
 
-### 7. `astrocare-p20-ux/` (P20 Module)
-- **Module Identifier:** `astrocare-p20-ux`
-- **Core Technology:** React 19, TypeScript, Tailwind CSS v4, Lucide Icons, Recharts, Vite, Vitest.
-- **Capabilities:**
-  - Unified AstroCare Mission Control Home Cockpit (Expedition 72, MET, live telemetry downlink at 1 Hz).
-  - Design system with Dark Mission-Control and Light Scientific Workspace themes.
-  - 5-group Information Architecture (Mission Operations, Health Monitoring, Intelligence, Scientific Research, Operations).
-  - Scientific data visualizations (Time-series baseline envelopes, normalized baseline bar comparisons, dual-axis multi-metric correlations).
-  - NASA Research Provenance and Open Science Data Repositories (NASA HRP, OSDR, LSDA/NLSP, GeneLab).
-  - Strict Data Provenance Badges (`LIVE TELEMETRY`, `SIMULATED DATA`, `NASA RESEARCH SOURCE`, etc.).
-  - WCAG 2.2 AA accessibility, keyboard navigation, and global Cmd/Ctrl+K search palette.
-  - Documented route contracts and integration placeholders for external modules (`P05`–`P17`).
-- **Archive:** `AstroCare_P20_UX_Experience.zip`
+---
 
-### 8. `astrocare-p21-readiness/` (P21 Module — Final Module)
-- **Module Identifier:** `astrocare-p21-readiness`
-- **Core Technology:** React 19, TypeScript, Tailwind CSS v4, Lucide Icons, Recharts, Vite, Vitest.
-- **Capabilities:**
-  - Deployment Readiness Dashboard (Modules A–J) with calibrated composite readiness score.
-  - 21-Module Integration Registry (`P01`–`P21`) with interactive architectural dependency graph.
-  - NASA Data Source Verification Center auditing 7 official NASA portals with 5-tier verification states.
-  - Environment Configuration & Secret Quarantine Validator with masked values and profile management.
-  - Backend Gateway, Database & API Infrastructure Health with simulation and live ping modes.
-  - 12-point Cybersecurity & PHI Quarantine Review (OWASP Top 10, NASA-STD-2820).
-  - Automated QA Pipeline tracking unit tests, strict TypeScript (`tsc -b`), and production builds.
-  - Multi-Target Deployment Manifests for Vercel, Docker, Netlify, Node.js, and static NGINX servers.
-  - Hackathon Demo Center with 3 preloaded aerospace scenarios and synthetic data quarantine.
-  - Final Release Checklist & Report Exporter (Markdown, JSON, CSV).
-- **Archive:** `AstroCare_P21_Deployment_Readiness.zip`
-- **Integration Guide:** `P21_INTEGRATION_GUIDE.md`
+## 3. Technology Stack
 
-## Quick Start (P21 Readiness Center)
+- **Frontend Core**: React 18.3+ with TypeScript 5.6+ & Vite
+- **Visual Design**: Swiss Editorial Design philosophy (`#F3F0E8` canvas, `#242824` ink) with Tailwind CSS
+- **Visualization**: Recharts & Native HTML5 Canvas Oscilloscope
+- **Backend & Storage**: Supabase (PostgreSQL 15+) with Row Level Security (RLS) & Realtime
+- **AI Integration**: Google Gemini API via Supabase Edge Function Proxy with deterministic fallback
+- **Runtime Validation**: Zod invariant schemas for all telemetry packets
+
+---
+
+## 4. Quick Start — Core Application
+
 ```bash
-cd astrocare-p21-readiness
+# 1. Clone repository
+git clone https://github.com/sakshi-07-sk/nasa.git
+cd nasa
+
+# 2. Install dependencies
 npm install
+
+# 3. Configure environment
+cp .env.example .env
+
+# 4. Start development server (Port 3000)
 npm run dev
-```
 
-## Running Tests
-```bash
-cd astrocare-p21-readiness
+# 5. Run test suite (236 tests)
 npm test
-```
 
-## Production Build
-```bash
-cd astrocare-p21-readiness
+# 6. Build production bundle
 npm run build
 ```
 
 ---
-*Disclaimer: AstroCare is an aerospace biomedical research and educational tool. It does not provide medical diagnoses or replace qualified NASA aerospace flight surgeons.*
+
+## 5. Architectural Documentation
+
+Comprehensive technical specifications are available in the [`docs/`](docs/) directory:
+- [System Architecture Blueprint (`docs/ARCHITECTURE.md`)](docs/ARCHITECTURE.md)
+- [Swiss Editorial Design System (`docs/DESIGN_SYSTEM.md`)](docs/DESIGN_SYSTEM.md)
+- [Database Schema Contract (`docs/DATABASE_SCHEMA.md`)](docs/DATABASE_SCHEMA.md)
+- [Simulation Engine Specification (`docs/SIMULATION_ENGINE.md`)](docs/SIMULATION_ENGINE.md)
+- [Health Analytics & Risk Engine (`docs/HEALTH_ANALYTICS.md`)](docs/HEALTH_ANALYTICS.md)
+- [AI Health Intelligence & Gemini Integration (`docs/AI_INTELLIGENCE.md`)](docs/AI_INTELLIGENCE.md)
+- [Clinical Reasoning Copilot (`docs/CLINICAL_COPILOT.md`)](docs/CLINICAL_COPILOT.md)
+- [Space Radiation Intelligence (`docs/RADIATION_INTELLIGENCE.md`)](docs/RADIATION_INTELLIGENCE.md)
+- [P21 Deployment Integration Guide (`P21_INTEGRATION_GUIDE.md`)](P21_INTEGRATION_GUIDE.md)
+
+---
+
+## 6. Medical & Regulatory Disclaimer
+
+*AstroCare is an aerospace biomedical research and flight support engineering platform. It does not provide medical diagnoses or replace certified NASA aerospace flight surgeons or mission medical controllers.*

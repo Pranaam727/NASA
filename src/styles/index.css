@@ -1,0 +1,50 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Universal high-contrast focus indicator */
+  :focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Enforce OpenType Tabular Figures on Monospace numerical telemetry */
+  .tabular-nums {
+    font-feature-settings: 'tnum' 1, 'zero' 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Micro hairline dividers */
+  .hairline-b {
+    border-bottom: 1px solid var(--color-border-hairline);
+  }
+
+  .hairline-t {
+    border-top: 1px solid var(--color-border-hairline);
+  }
+
+  .hairline-l {
+    border-left: 1px solid var(--color-border-hairline);
+  }
+
+  .hairline-r {
+    border-right: 1px solid var(--color-border-hairline);
+  }
+
+  .hairline-all {
+    border: 1px solid var(--color-border-hairline);
+  }
+}

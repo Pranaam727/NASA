@@ -1,0 +1,38 @@
+:root {
+  /* ==========================================================================
+     ASTROCARE COLOR TOKENS (Swiss Editorial × Aerospace Instrumentation)
+     ========================================================================== */
+  --color-bg-primary: #F3F0E8;     /* Warm Ivory Canvas */
+  --color-bg-secondary: #EAE6DC;   /* Soft Stone Surface */
+  --color-bg-surface: #FFFFFF;     /* Clean Card Surfaces */
+  --color-bg-subtle: #ECE8DE;      /* Micro Hover / Active State */
+
+  --color-text-primary: #242824;   /* Deep Graphite Text */
+  --color-text-secondary: #73766F; /* Muted Graphite Text */
+  --color-text-tertiary: #9A9E96;  /* Faint Metadata */
+  --color-text-inverted: #F3F0E8;  /* Ivory Inverted Text */
+
+  --color-border-hairline: #D8D4C9;/* Fine Hairline Divider */
+  --color-border-strong: #8C9086;  /* Emphasized Divider */
+  --color-border-focus: #242824;   /* High-Contrast Focus Ring */
+
+  --color-status-healthy: #738174; /* Sage Green (Nominal) */
+  --color-status-caution: #D16C48; /* Signal Terracotta (Warning / >2σ) */
+  --color-status-critical: #B9473E;/* Critical Red (Life Threat) */
+  --color-status-sandstone: #D8CBAF;/* Sandstone Structural Badge */
+
+  /* ==========================================================================
+     TYPOGRAPHY TOKENS
+     ========================================================================== */
+  --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* ==========================================================================
+     SPACING & ELEVATION TOKENS
+     ========================================================================== */
+  --space-hairline: 1px;
+  --radius-sharp: 0px;
+  --radius-micro: 2px;
+  --radius-card: 4px;
+}
