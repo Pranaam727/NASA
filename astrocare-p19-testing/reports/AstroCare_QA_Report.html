@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AstroCare Verification Report - AC-QA-1794658859604-eyctl</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0b0f19; color: #e2e8f0; margin: 0; padding: 24px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header { background: #131b2e; border: 1px solid #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; }
+    h1 { margin: 0 0 8px 0; color: #38bdf8; font-size: 24px; }
+    .sub { color: #94a3b8; font-size: 13px; margin: 0; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .kpi { background: #131b2e; border: 1px solid #1e293b; border-radius: 8px; padding: 16px; text-align: center; }
+    .kpi .num { font-size: 32px; font-weight: bold; margin-top: 4px; }
+    .kpi.pass .num { color: #10b981; }
+    .kpi.fail .num { color: #ef4444; }
+    .kpi.blocked .num { color: #8b5cf6; }
+    .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .module-card { background: #131b2e; border: 1px solid #1e293b; border-radius: 8px; padding: 16px; }
+    .module-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .module-header h4 { margin: 0; font-size: 16px; color: #f1f5f9; }
+    .badge { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+    .badge.healthy { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+    .badge.degraded { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+    .badge.failing { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+    .badge.blocked { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; }
+    .stats-mini { display: flex; justify-content: space-between; font-size: 12px; color: #94a3b8; }
+    .suite-card { background: #131b2e; border: 1px solid #1e293b; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+    .suite-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 12px; margin-bottom: 12px; }
+    .suite-header h3 { margin: 0; font-size: 18px; color: #e2e8f0; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 8px 12px; color: #64748b; font-weight: 600; border-bottom: 1px solid #1e293b; }
+    td { padding: 10px 12px; border-bottom: 1px solid #0f172a; vertical-align: top; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; color: #fff; font-size: 10px; font-weight: bold; }
+    .pill { padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; margin-left: 6px; }
+    .pill.pass { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+    .pill.fail { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+    .pill.blocked { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
+    .pill.warn { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+    .error-box { background: #1e1b2e; color: #f87171; border-left: 3px solid #ef4444; padding: 8px; margin-top: 6px; font-size: 11px; white-space: pre-wrap; font-family: monospace; border-radius: 4px; }
+    .compliance-box { background: #0f172a; border-left: 4px solid #38bdf8; padding: 16px; border-radius: 4px; margin-top: 24px; font-size: 12px; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>AstroCare Quality Assurance & Verification Report</h1>
+        <p class="sub">Report ID: AC-QA-1794658859604-eyctl | Generated: 2026-11-14T12:20:59.604Z | Environment: AstroCare Quality Architecture v1 (Offline Mode: true)</p>
+      </div>
+      <div>
+        <span class="pill pass" style="font-size: 14px; padding: 8px 16px;">
+          READY FOR INTEGRATION
+        </span>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi pass">
+        <div class="sub">Passed Tests</div>
+        <div class="num">25</div>
+      </div>
+      <div class="kpi fail">
+        <div class="sub">Failed Tests</div>
+        <div class="num">0</div>
+      </div>
+      <div class="kpi blocked">
+        <div class="sub">Blocked Tests</div>
+        <div class="num">0</div>
+      </div>
+      <div class="kpi">
+        <div class="sub">Pass Rate</div>
+        <div class="num">100%</div>
+      </div>
+      <div class="kpi">
+        <div class="sub">Execution Time</div>
+        <div class="num">55ms</div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 18px; margin-bottom: 12px; color: #94a3b8;">Module Verification Status</h2>
+    <div class="module-grid">
+      
+        <div class="module-card">
+          <div class="module-header">
+            <h4>Astronaut Health & Biometrics</h4>
+            <span class="badge healthy">HEALTHY (100%)</span>
+          </div>
+          <div class="stats-mini">
+            <span>Passed: <strong>5</strong></span>
+            <span>Failed: <strong style="color: #ef4444">0</strong></span>
+            <span>Blocked: <strong style="color: #8b5cf6">0</strong></span>
+            <span>Total: 5</span>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <div class="module-header">
+            <h4>Scientific Computing & Radiation Intelligence</h4>
+            <span class="badge healthy">HEALTHY (100%)</span>
+          </div>
+          <div class="stats-mini">
+            <span>Passed: <strong>6</strong></span>
+            <span>Failed: <strong style="color: #ef4444">0</strong></span>
+            <span>Blocked: <strong style="color: #8b5cf6">0</strong></span>
+            <span>Total: 6</span>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <div class="module-header">
+            <h4>Clinical Reasoning Copilot</h4>
+            <span class="badge healthy">HEALTHY (100%)</span>
+          </div>
+          <div class="stats-mini">
+            <span>Passed: <strong>3</strong></span>
+            <span>Failed: <strong style="color: #ef4444">0</strong></span>
+            <span>Blocked: <strong style="color: #8b5cf6">0</strong></span>
+            <span>Total: 3</span>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <div class="module-header">
+            <h4>NASA Research Discovery & Data Lineage</h4>
+            <span class="badge healthy">HEALTHY (100%)</span>
+          </div>
+          <div class="stats-mini">
+            <span>Passed: <strong>4</strong></span>
+            <span>Failed: <strong style="color: #ef4444">0</strong></span>
+            <span>Blocked: <strong style="color: #8b5cf6">0</strong></span>
+            <span>Total: 4</span>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <div class="module-header">
+            <h4>Cybersecurity & Compliance</h4>
+            <span class="badge healthy">HEALTHY (100%)</span>
+          </div>
+          <div class="stats-mini">
+            <span>Passed: <strong>3</strong></span>
+            <span>Failed: <strong style="color: #ef4444">0</strong></span>
+            <span>Blocked: <strong style="color: #8b5cf6">0</strong></span>
+            <span>Total: 3</span>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <div class="module-header">
+            <h4>System Performance & Scalability</h4>
+            <span class="badge healthy">HEALTHY (100%)</span>
+          </div>
+          <div class="stats-mini">
+            <span>Passed: <strong>2</strong></span>
+            <span>Failed: <strong style="color: #ef4444">0</strong></span>
+            <span>Blocked: <strong style="color: #8b5cf6">0</strong></span>
+            <span>Total: 2</span>
+          </div>
+        </div>
+      
+        <div class="module-card">
+          <div class="module-header">
+            <h4>Architecture Integration & Registry</h4>
+            <span class="badge healthy">HEALTHY (100%)</span>
+          </div>
+          <div class="stats-mini">
+            <span>Passed: <strong>2</strong></span>
+            <span>Failed: <strong style="color: #ef4444">0</strong></span>
+            <span>Blocked: <strong style="color: #8b5cf6">0</strong></span>
+            <span>Total: 2</span>
+          </div>
+        </div>
+      
+    </div>
+
+    <h2 style="font-size: 18px; margin-bottom: 12px; color: #94a3b8;">Test Suites Execution Detail</h2>
+    
+        <div class="suite-card">
+          <div class="suite-header">
+            <div>
+              <h3>Biomedical Telemetry & Physiological Bounds Suite</h3>
+              <p class="sub">Astronaut Health & Biometrics • Category: BIOMEDICAL • 1.5ms</p>
+            </div>
+            <div class="suite-counts">
+              <span class="pill pass">5 PASS</span>
+              
+              
+              
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Test ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>bio-001</code></td>
+                  <td>
+                    <strong>Nominal Telemetry Sequence Validation</strong><br/>
+                    <small>Ensures nominal vital sign streams pass schema and physiological checks.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.46 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>bio-002</code></td>
+                  <td>
+                    <strong>SpO2 Physical Ceiling Rejection (>100%)</strong><br/>
+                    <small>Validates that physically impossible oxygen saturation (>100%) is flagged as schema error.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.07 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>bio-003</code></td>
+                  <td>
+                    <strong>Incompatible Unit Detection</strong><br/>
+                    <small>Verifies heart rate submitted in mmHg triggers an INCOMPATIBLE_UNIT error.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.06 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>bio-004</code></td>
+                  <td>
+                    <strong>Tachycardia Spike Rate-of-Change Flag</strong><br/>
+                    <small>Verifies abrupt delta spike (>60 bpm within 15 seconds) triggers IMPLAUSIBLE_RATE_OF_CHANGE warning.</small>
+                    
+                  </td>
+                  <td>MEDIUM</td>
+                  <td>0.09 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>bio-005</code></td>
+                  <td>
+                    <strong>Non-Diagnostic Invariant Guard</strong><br/>
+                    <small>Verifies that no biomedical finding ever asserts an autonomous medical diagnosis.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.10 ms</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="suite-card">
+          <div class="suite-header">
+            <div>
+              <h3>Scientific Calculation & Radiation Dosimetry Suite</h3>
+              <p class="sub">Scientific Computing & Radiation Intelligence • Category: SCIENTIFIC • 2.1ms</p>
+            </div>
+            <div class="suite-counts">
+              <span class="pill pass">6 PASS</span>
+              
+              
+              
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Test ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sci-001</code></td>
+                  <td>
+                    <strong>Zero-Deviation Mathematical Invariant</strong><br/>
+                    <small>Asserts that value === baseline strictly yields 0.0% deviation.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>1.63 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sci-002</code></td>
+                  <td>
+                    <strong>Zero-Baseline Division Guard</strong><br/>
+                    <small>Verifies baseline === 0 with non-zero value returns null instead of dividing by zero.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.03 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sci-003</code></td>
+                  <td>
+                    <strong>Z-Score Standardization & Invariant</strong><br/>
+                    <small>Verifies Z-score formula when value === mean yields 0.0.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.05 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sci-004</code></td>
+                  <td>
+                    <strong>Moving Average Window Mathematical Stability</strong><br/>
+                    <small>Verifies sliding window average over time-series data.</small>
+                    
+                  </td>
+                  <td>MEDIUM</td>
+                  <td>0.07 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sci-005</code></td>
+                  <td>
+                    <strong>Radiation Physics: Strict Gy (Absorbed) vs Sv (Equivalent) Separation</strong><br/>
+                    <small>Ensures physical absorbed dose (Gy) cannot be directly converted to equivalent dose (Sv) without particle w_R.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.09 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sci-006</code></td>
+                  <td>
+                    <strong>Multi-Particle Radiation Aggregation Invariant</strong><br/>
+                    <small>Verifies biological weighting across protons (w_R=2), heavy ions (w_R=20), and fast neutrons (w_R=20).</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.16 ms</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="suite-card">
+          <div class="suite-header">
+            <div>
+              <h3>AI Intelligence Grounding & Deterministic Fallback Suite</h3>
+              <p class="sub">Clinical Reasoning Copilot • Category: AI_GROUNDING • 0.9ms</p>
+            </div>
+            <div class="suite-counts">
+              <span class="pill pass">3 PASS</span>
+              
+              
+              
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Test ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>ai-001</code></td>
+                  <td>
+                    <strong>Deterministic Fallback Model Labelling Verification</strong><br/>
+                    <small>Ensures deterministic fallback is NEVER labelled as Gemini Pro or Gemini Flash.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.15 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>ai-002</code></td>
+                  <td>
+                    <strong>Hallucinated Telemetry Measurement Detection</strong><br/>
+                    <small>Detects if AI cites a numerical measurement not present in the health context.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.60 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>ai-003</code></td>
+                  <td>
+                    <strong>Deterministic Alert Downgrade Prohibition</strong><br/>
+                    <small>Ensures that an active deterministic alert cannot be downgraded to LOW risk by AI.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.16 ms</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="suite-card">
+          <div class="suite-header">
+            <div>
+              <h3>NASA Data Authority & Scientific Resources Suite</h3>
+              <p class="sub">NASA Research Discovery & Data Lineage • Category: NASA_DATA • 0.6ms</p>
+            </div>
+            <div class="suite-counts">
+              <span class="pill pass">4 PASS</span>
+              
+              
+              
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Test ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>nasa-001</code></td>
+                  <td>
+                    <strong>NASA Open API Availability & Rate Limit Safeguard</strong><br/>
+                    <small>Validates DEMO_KEY quota bounds (30 req/hr) and connectivity checks.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.20 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>nasa-002</code></td>
+                  <td>
+                    <strong>NASA OSDR Accession & Study Schema Integrity</strong><br/>
+                    <small>Verifies OSDR study accession structure (OSD-379), assays, samples, and files.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.14 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>nasa-003</code></td>
+                  <td>
+                    <strong>NASA NTRS Citation Metadata Verification</strong><br/>
+                    <small>Validates technical publication citations, authors, abstracts, and landing page URLs.</small>
+                    
+                  </td>
+                  <td>MEDIUM</td>
+                  <td>0.11 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>nasa-004</code></td>
+                  <td>
+                    <strong>NASA Open Data Portal Catalogue Reference Guard</strong><br/>
+                    <small>Validates dataset catalogue discovery and clarifies catalogue vs archive distinction.</small>
+                    
+                  </td>
+                  <td>LOW</td>
+                  <td>0.10 ms</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="suite-card">
+          <div class="suite-header">
+            <div>
+              <h3>Application Security, Secrets & Sanitization Suite</h3>
+              <p class="sub">Cybersecurity & Compliance • Category: SECURITY • 0.8ms</p>
+            </div>
+            <div class="suite-counts">
+              <span class="pill pass">3 PASS</span>
+              
+              
+              
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Test ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sec-001</code></td>
+                  <td>
+                    <strong>Secret Scanner Regex & Masking Verification</strong><br/>
+                    <small>Validates secret detection without printing raw secret tokens.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.51 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sec-002</code></td>
+                  <td>
+                    <strong>Vite Environment Variable Client Exposure Audit</strong><br/>
+                    <small>Ensures sensitive keys are not exposed via VITE_ prefix to browser bundles.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.08 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>sec-003</code></td>
+                  <td>
+                    <strong>XSS & SQL Injection Payload Sanitization Check</strong><br/>
+                    <small>Verifies detection of malicious HTML script injection and SQL tokens.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.23 ms</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="suite-card">
+          <div class="suite-header">
+            <div>
+              <h3>Performance Benchmarking & Latency Budgets Suite</h3>
+              <p class="sub">System Performance & Scalability • Category: PERFORMANCE • 48.8ms</p>
+            </div>
+            <div class="suite-counts">
+              <span class="pill pass">2 PASS</span>
+              
+              
+              
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Test ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>perf-001</code></td>
+                  <td>
+                    <strong>10,000 Record Telemetry Batch Validation Throughput</strong><br/>
+                    <small>Validates 10,000 synthetic biotelemetry items against schema within 100ms budget.</small>
+                    
+                  </td>
+                  <td>MEDIUM</td>
+                  <td>47.35 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>perf-002</code></td>
+                  <td>
+                    <strong>10,000 Element Moving Average Latency Budget</strong><br/>
+                    <small>Validates sliding window time-series calculation for 10,000 items in < 50ms.</small>
+                    
+                  </td>
+                  <td>LOW</td>
+                  <td>1.39 ms</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="suite-card">
+          <div class="suite-header">
+            <div>
+              <h3>Regression & Module Interface Compatibility Suite</h3>
+              <p class="sub">Architecture Integration & Registry • Category: REGRESSION • 0.4ms</p>
+            </div>
+            <div class="suite-counts">
+              <span class="pill pass">2 PASS</span>
+              
+              
+              
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Test ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>reg-001</code></td>
+                  <td>
+                    <strong>Cross-Module Dependency Graph Resolution</strong><br/>
+                    <small>Verifies all required module services are fulfilled by registered module manifests.</small>
+                    
+                  </td>
+                  <td>CRITICAL</td>
+                  <td>0.30 ms</td>
+                </tr>
+              
+                <tr class="pass">
+                  <td><span class="tag" style="background:#10b981">PASS</span></td>
+                  <td><code>reg-002</code></td>
+                  <td>
+                    <strong>Route Collision Detection</strong><br/>
+                    <small>Verifies that registering conflicting duplicate route paths is detected.</small>
+                    
+                  </td>
+                  <td>HIGH</td>
+                  <td>0.06 ms</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+
+    <div class="compliance-box">
+      <strong>Engineering Assurance Standards Notice:</strong><br/>
+      AstroCare software verification aligns with principles from NASA NPR 7150.2D and NASA-STD-8739.8B. This report is an engineering quality assessment for research and mission decision-support and does not constitute formal NASA flight-qualification certification.
+    </div>
+  </div>
+</body>
+</html>

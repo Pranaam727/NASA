@@ -1,0 +1,37 @@
+{
+  "$schema": "https://astrocare.space/schemas/module-manifest.v1.json",
+  "moduleId": "astrocare-cardiovascular-monitor",
+  "moduleName": "Astronaut Cardiovascular & Autonomic Monitor",
+  "moduleVersion": "2.1.0",
+  "category": "BIOMEDICAL",
+  "maintainer": "AstroCare Biomedical Engineering Flight Team",
+  "requiredServices": [
+    "telemetry-stream-service",
+    "biomedical-vital-service"
+  ],
+  "providedServices": [
+    "cardiovascular-analytics-service",
+    "baroreflex-assessment-service"
+  ],
+  "exportedTypes": [
+    "CardiovascularTelemetryRecord",
+    "ArterialPressureWaveform",
+    "AutonomicImbalanceScore"
+  ],
+  "registeredRoutes": [
+    "/biometrics/cardiovascular",
+    "/biometrics/arterial-pressure"
+  ],
+  "dataContracts": [
+    {
+      "contractId": "contract-cardiovascular-v2",
+      "version": "2.1.0",
+      "schemaDefinition": "CardiovascularSchema_v2",
+      "inputTypes": ["TelemetryRecord"],
+      "outputTypes": ["CardiovascularTelemetryRecord", "AutonomicImbalanceScore"]
+    }
+  ],
+  "testEntryPoints": [
+    "tests/unit/biomedical/cardiovascular.test.ts"
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "reportId": "AC-QA-1794658859604-eyctl",
+  "frameworkVersion": "1.0.0",
+  "generatedAt": "2026-11-14T12:20:59.604Z",
+  "environment": {
+    "nodeVersion": "v24.20.0",
+    "os": "win32",
+    "platform": "AstroCare Quality Architecture v1",
+    "offlineMode": true
+  },
+  "summary": {
+    "totalSuites": 7,
+    "totalTests": 25,
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0,
+    "blocked": 0,
+    "warnings": 0,
+    "passRate": 100,
+    "totalDurationMs": 55.1
+  },
+  "moduleHealth": [
+    {
+      "moduleName": "Astronaut Health & Biometrics",
+      "totalTests": 5,
+      "passed": 5,
+      "failed": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "healthScore": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "moduleName": "Scientific Computing & Radiation Intelligence",
+      "totalTests": 6,
+      "passed": 6,
+      "failed": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "healthScore": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "moduleName": "Clinical Reasoning Copilot",
+      "totalTests": 3,
+      "passed": 3,
+      "failed": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "healthScore": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "moduleName": "NASA Research Discovery & Data Lineage",
+      "totalTests": 4,
+      "passed": 4,
+      "failed": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "healthScore": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "moduleName": "Cybersecurity & Compliance",
+      "totalTests": 3,
+      "passed": 3,
+      "failed": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "healthScore": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "moduleName": "System Performance & Scalability",
+      "totalTests": 2,
+      "passed": 2,
+      "failed": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "healthScore": 100,
+      "status": "HEALTHY"
+    },
+    {
+      "moduleName": "Architecture Integration & Registry",
+      "totalTests": 2,
+      "passed": 2,
+      "failed": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "healthScore": 100,
+      "status": "HEALTHY"
+    }
+  ],
+  "integrationReadiness": {
+    "overallScore": 100,
+    "isReadyForIntegration": true,
+    "blockers": [],
+    "recommendations": [],
+    "categoryBreakdown": {
+      "FUNCTIONAL": {
+        "total": 0,
+        "passed": 0,
+        "score": 100
+      },
+      "UNIT": {
+        "total": 0,
+        "passed": 0,
+        "score": 100
+      },
+      "INTEGRATION": {
+        "total": 0,
+        "passed": 0,
+        "score": 100
+      },
+      "E2E": {
+        "total": 0,
+        "passed": 0,
+        "score": 100
+      },
+      "API": {
+        "total": 0,
+        "passed": 0,
+        "score": 100
+      },
+      "BIOMEDICAL": {
+        "total": 5,
+        "passed": 5,
+        "score": 100
+      },
+      "SCIENTIFIC": {
+        "total": 6,
+        "passed": 6,
+        "score": 100
+      },
+      "AI_GROUNDING": {
+        "total": 3,
+        "passed": 3,
+        "score": 100
+      },
+      "NASA_DATA": {
+        "total": 4,
+        "passed": 4,
+        "score": 100
+      },
+      "SECURITY": {
+        "total": 3,
+        "passed": 3,
+        "score": 100
+      },
+      "PERFORMANCE": {
+        "total": 2,
+        "passed": 2,
+        "score": 100
+      },
+      "ACCESSIBILITY": {
+        "total": 0,
+        "passed": 0,
+        "score": 100
+      },
+      "REGRESSION": {
+        "total": 2,
+        "passed": 2,
+        "score": 100
+      }
+    },
+    "nasaComplianceNote": "AstroCare software verification aligns with principles from NASA NPR 7150.2D and NASA-STD-8739.8B. This report is an engineering quality assessment for research and mission decision-support and does not constitute formal NASA flight-qualification certification."
+  },
+  "suiteResults": [
+    {
+      "id": "suite-biomedical-validation",
+      "name": "Biomedical Telemetry & Physiological Bounds Suite",
+      "moduleName": "Astronaut Health & Biometrics",
+      "category": "BIOMEDICAL",
+      "durationMs": 1.53,
+      "totalTests": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "testResults": [
+        {
+          "id": "bio-001",
+          "name": "Nominal Telemetry Sequence Validation",
+          "category": "BIOMEDICAL",
+          "moduleName": "Astronaut Health & Biometrics",
+          "description": "Ensures nominal vital sign streams pass schema and physiological checks.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.46,
+          "timestamp": "2026-11-14T12:20:59.549Z"
+        },
+        {
+          "id": "bio-002",
+          "name": "SpO2 Physical Ceiling Rejection (>100%)",
+          "category": "BIOMEDICAL",
+          "moduleName": "Astronaut Health & Biometrics",
+          "description": "Validates that physically impossible oxygen saturation (>100%) is flagged as schema error.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.07,
+          "timestamp": "2026-11-14T12:20:59.550Z"
+        },
+        {
+          "id": "bio-003",
+          "name": "Incompatible Unit Detection",
+          "category": "BIOMEDICAL",
+          "moduleName": "Astronaut Health & Biometrics",
+          "description": "Verifies heart rate submitted in mmHg triggers an INCOMPATIBLE_UNIT error.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.06,
+          "timestamp": "2026-11-14T12:20:59.550Z"
+        },
+        {
+          "id": "bio-004",
+          "name": "Tachycardia Spike Rate-of-Change Flag",
+          "category": "BIOMEDICAL",
+          "moduleName": "Astronaut Health & Biometrics",
+          "description": "Verifies abrupt delta spike (>60 bpm within 15 seconds) triggers IMPLAUSIBLE_RATE_OF_CHANGE warning.",
+          "severity": "MEDIUM",
+          "status": "PASS",
+          "durationMs": 0.09,
+          "timestamp": "2026-11-14T12:20:59.550Z"
+        },
+        {
+          "id": "bio-005",
+          "name": "Non-Diagnostic Invariant Guard",
+          "category": "BIOMEDICAL",
+          "moduleName": "Astronaut Health & Biometrics",
+          "description": "Verifies that no biomedical finding ever asserts an autonomous medical diagnosis.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.1,
+          "timestamp": "2026-11-14T12:20:59.550Z"
+        }
+      ]
+    },
+    {
+      "id": "suite-scientific-calculations",
+      "name": "Scientific Calculation & Radiation Dosimetry Suite",
+      "moduleName": "Scientific Computing & Radiation Intelligence",
+      "category": "SCIENTIFIC",
+      "durationMs": 2.07,
+      "totalTests": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "testResults": [
+        {
+          "id": "sci-001",
+          "name": "Zero-Deviation Mathematical Invariant",
+          "category": "SCIENTIFIC",
+          "moduleName": "Scientific Computing & Radiation Intelligence",
+          "description": "Asserts that value === baseline strictly yields 0.0% deviation.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 1.63,
+          "timestamp": "2026-11-14T12:20:59.551Z"
+        },
+        {
+          "id": "sci-002",
+          "name": "Zero-Baseline Division Guard",
+          "category": "SCIENTIFIC",
+          "moduleName": "Scientific Computing & Radiation Intelligence",
+          "description": "Verifies baseline === 0 with non-zero value returns null instead of dividing by zero.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.03,
+          "timestamp": "2026-11-14T12:20:59.552Z"
+        },
+        {
+          "id": "sci-003",
+          "name": "Z-Score Standardization & Invariant",
+          "category": "SCIENTIFIC",
+          "moduleName": "Scientific Computing & Radiation Intelligence",
+          "description": "Verifies Z-score formula when value === mean yields 0.0.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.05,
+          "timestamp": "2026-11-14T12:20:59.552Z"
+        },
+        {
+          "id": "sci-004",
+          "name": "Moving Average Window Mathematical Stability",
+          "category": "SCIENTIFIC",
+          "moduleName": "Scientific Computing & Radiation Intelligence",
+          "description": "Verifies sliding window average over time-series data.",
+          "severity": "MEDIUM",
+          "status": "PASS",
+          "durationMs": 0.07,
+          "timestamp": "2026-11-14T12:20:59.552Z"
+        },
+        {
+          "id": "sci-005",
+          "name": "Radiation Physics: Strict Gy (Absorbed) vs Sv (Equivalent) Separation",
+          "category": "SCIENTIFIC",
+          "moduleName": "Scientific Computing & Radiation Intelligence",
+          "description": "Ensures physical absorbed dose (Gy) cannot be directly converted to equivalent dose (Sv) without particle w_R.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.09,
+          "timestamp": "2026-11-14T12:20:59.552Z"
+        },
+        {
+          "id": "sci-006",
+          "name": "Multi-Particle Radiation Aggregation Invariant",
+          "category": "SCIENTIFIC",
+          "moduleName": "Scientific Computing & Radiation Intelligence",
+          "description": "Verifies biological weighting across protons (w_R=2), heavy ions (w_R=20), and fast neutrons (w_R=20).",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.16,
+          "timestamp": "2026-11-14T12:20:59.552Z"
+        }
+      ]
+    },
+    {
+      "id": "suite-ai-safety-grounding",
+      "name": "AI Intelligence Grounding & Deterministic Fallback Suite",
+      "moduleName": "Clinical Reasoning Copilot",
+      "category": "AI_GROUNDING",
+      "durationMs": 0.94,
+      "totalTests": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "testResults": [
+        {
+          "id": "ai-001",
+          "name": "Deterministic Fallback Model Labelling Verification",
+          "category": "AI_GROUNDING",
+          "moduleName": "Clinical Reasoning Copilot",
+          "description": "Ensures deterministic fallback is NEVER labelled as Gemini Pro or Gemini Flash.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.15,
+          "timestamp": "2026-11-14T12:20:59.553Z"
+        },
+        {
+          "id": "ai-002",
+          "name": "Hallucinated Telemetry Measurement Detection",
+          "category": "AI_GROUNDING",
+          "moduleName": "Clinical Reasoning Copilot",
+          "description": "Detects if AI cites a numerical measurement not present in the health context.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.6,
+          "timestamp": "2026-11-14T12:20:59.553Z"
+        },
+        {
+          "id": "ai-003",
+          "name": "Deterministic Alert Downgrade Prohibition",
+          "category": "AI_GROUNDING",
+          "moduleName": "Clinical Reasoning Copilot",
+          "description": "Ensures that an active deterministic alert cannot be downgraded to LOW risk by AI.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.16,
+          "timestamp": "2026-11-14T12:20:59.553Z"
+        }
+      ]
+    },
+    {
+      "id": "suite-nasa-resources",
+      "name": "NASA Data Authority & Scientific Resources Suite",
+      "moduleName": "NASA Research Discovery & Data Lineage",
+      "category": "NASA_DATA",
+      "durationMs": 0.57,
+      "totalTests": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "testResults": [
+        {
+          "id": "nasa-001",
+          "name": "NASA Open API Availability & Rate Limit Safeguard",
+          "category": "NASA_DATA",
+          "moduleName": "NASA Research Discovery & Data Lineage",
+          "description": "Validates DEMO_KEY quota bounds (30 req/hr) and connectivity checks.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.2,
+          "timestamp": "2026-11-14T12:20:59.554Z"
+        },
+        {
+          "id": "nasa-002",
+          "name": "NASA OSDR Accession & Study Schema Integrity",
+          "category": "NASA_DATA",
+          "moduleName": "NASA Research Discovery & Data Lineage",
+          "description": "Verifies OSDR study accession structure (OSD-379), assays, samples, and files.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.14,
+          "timestamp": "2026-11-14T12:20:59.554Z"
+        },
+        {
+          "id": "nasa-003",
+          "name": "NASA NTRS Citation Metadata Verification",
+          "category": "NASA_DATA",
+          "moduleName": "NASA Research Discovery & Data Lineage",
+          "description": "Validates technical publication citations, authors, abstracts, and landing page URLs.",
+          "severity": "MEDIUM",
+          "status": "PASS",
+          "durationMs": 0.11,
+          "timestamp": "2026-11-14T12:20:59.554Z"
+        },
+        {
+          "id": "nasa-004",
+          "name": "NASA Open Data Portal Catalogue Reference Guard",
+          "category": "NASA_DATA",
+          "moduleName": "NASA Research Discovery & Data Lineage",
+          "description": "Validates dataset catalogue discovery and clarifies catalogue vs archive distinction.",
+          "severity": "LOW",
+          "status": "PASS",
+          "durationMs": 0.1,
+          "timestamp": "2026-11-14T12:20:59.554Z"
+        }
+      ]
+    },
+    {
+      "id": "suite-security-checks",
+      "name": "Application Security, Secrets & Sanitization Suite",
+      "moduleName": "Cybersecurity & Compliance",
+      "category": "SECURITY",
+      "durationMs": 0.84,
+      "totalTests": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "testResults": [
+        {
+          "id": "sec-001",
+          "name": "Secret Scanner Regex & Masking Verification",
+          "category": "SECURITY",
+          "moduleName": "Cybersecurity & Compliance",
+          "description": "Validates secret detection without printing raw secret tokens.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.51,
+          "timestamp": "2026-11-14T12:20:59.554Z"
+        },
+        {
+          "id": "sec-002",
+          "name": "Vite Environment Variable Client Exposure Audit",
+          "category": "SECURITY",
+          "moduleName": "Cybersecurity & Compliance",
+          "description": "Ensures sensitive keys are not exposed via VITE_ prefix to browser bundles.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.08,
+          "timestamp": "2026-11-14T12:20:59.555Z"
+        },
+        {
+          "id": "sec-003",
+          "name": "XSS & SQL Injection Payload Sanitization Check",
+          "category": "SECURITY",
+          "moduleName": "Cybersecurity & Compliance",
+          "description": "Verifies detection of malicious HTML script injection and SQL tokens.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.23,
+          "timestamp": "2026-11-14T12:20:59.555Z"
+        }
+      ]
+    },
+    {
+      "id": "suite-performance-benchmarking",
+      "name": "Performance Benchmarking & Latency Budgets Suite",
+      "moduleName": "System Performance & Scalability",
+      "category": "PERFORMANCE",
+      "durationMs": 48.75,
+      "totalTests": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "testResults": [
+        {
+          "id": "perf-001",
+          "name": "10,000 Record Telemetry Batch Validation Throughput",
+          "category": "PERFORMANCE",
+          "moduleName": "System Performance & Scalability",
+          "description": "Validates 10,000 synthetic biotelemetry items against schema within 100ms budget.",
+          "severity": "MEDIUM",
+          "status": "PASS",
+          "durationMs": 47.35,
+          "timestamp": "2026-11-14T12:20:59.555Z"
+        },
+        {
+          "id": "perf-002",
+          "name": "10,000 Element Moving Average Latency Budget",
+          "category": "PERFORMANCE",
+          "moduleName": "System Performance & Scalability",
+          "description": "Validates sliding window time-series calculation for 10,000 items in < 50ms.",
+          "severity": "LOW",
+          "status": "PASS",
+          "durationMs": 1.39,
+          "timestamp": "2026-11-14T12:20:59.602Z"
+        }
+      ]
+    },
+    {
+      "id": "suite-module-compatibility",
+      "name": "Regression & Module Interface Compatibility Suite",
+      "moduleName": "Architecture Integration & Registry",
+      "category": "REGRESSION",
+      "durationMs": 0.37,
+      "totalTests": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "blocked": 0,
+      "warnings": 0,
+      "testResults": [
+        {
+          "id": "reg-001",
+          "name": "Cross-Module Dependency Graph Resolution",
+          "category": "REGRESSION",
+          "moduleName": "Architecture Integration & Registry",
+          "description": "Verifies all required module services are fulfilled by registered module manifests.",
+          "severity": "CRITICAL",
+          "status": "PASS",
+          "durationMs": 0.3,
+          "timestamp": "2026-11-14T12:20:59.604Z"
+        },
+        {
+          "id": "reg-002",
+          "name": "Route Collision Detection",
+          "category": "REGRESSION",
+          "moduleName": "Architecture Integration & Registry",
+          "description": "Verifies that registering conflicting duplicate route paths is detected.",
+          "severity": "HIGH",
+          "status": "PASS",
+          "durationMs": 0.06,
+          "timestamp": "2026-11-14T12:20:59.604Z"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "warnings": []
+}
