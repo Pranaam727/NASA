@@ -27,6 +27,7 @@ Located at project root (`src/`, `public/`, `supabase/`, `docs/`):
 
 ### Part B: Extended Aerospace Research Modules (`P10`–`P21`)
 - **`astrocare-p10-radiation/` (P10 Module)**: NASA RadLab flight archive integration, historical mission dosimetric comparison, and OSDR radiation biology exploration.
+- **`astrocare-p11/` (P11 Module)**: Astronaut wellness, sleep analytics, circadian rhythm modeling, confidential mental health check-ins, cognitive performance battery, and team dynamics.
 - **`astrocare-p12-immune/` (P12 Module)**: Spaceflight immune dysregulation, cytokine shift monitoring (IL-6, TNF-α, IFN-γ, CRP), and sample cold-chain logistics.
 - **`ai-intelligence/` (P13 Module)**: Biomedical conversational assistant with multi-axis health interpretation and research summarizer.
 - **`astrocare-p14-risk-intelligence/` (P14 Module)**: NASA Human Research Program (HRP) 8 core risk categories, evidence library with DOIs, and OSDR live search.
