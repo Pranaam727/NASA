@@ -32,6 +32,8 @@ Located at project root (`src/`, `public/`, `supabase/`, `docs/`):
 - **`astrocare-p14-risk-intelligence/` (P14 Module)**: NASA Human Research Program (HRP) 8 core risk categories, evidence library with DOIs, and OSDR live search.
 - **`astrocare-p15-dataset-intelligence/` (P15 Module)**: NASA Open Science Data Repository (OSDR) multi-omics indexing and population classification.
 - **`astrocare-p16-scientific-provenance/` (P16 Module)**: Citation lineage graph, NASA Technical Report registry, and evidence quality auditing.
+- **`astrocare-p17-digital-twin/` (P17 Module)**: Physiological vector digital twin, longitudinal multi-system telemetry, anomaly detection, and predictive trajectory forecasting.
+- **`astrocare-p18-mission-scenarios/` (P18 Module)**: Mission simulation engine, deterministic scenarios (SPE, cabin pressure, hypoxia), and biomedical readiness intelligence.
 - **`astrocare-p19-testing/` (P19 Module)**: Aerospace QA test framework with biomedical calculation validators and security scans.
 - **`astrocare-p20-ux/` (P20 Module)**: Unified mission control cockpit design system, expedition telemetry downlink, and WCAG 2.2 AA accessibility.
 - **`astrocare-p21-readiness/` (P21 Module)**: Hackathon deployment readiness dashboard, 21-module registry, and multi-target deployment manifests.
