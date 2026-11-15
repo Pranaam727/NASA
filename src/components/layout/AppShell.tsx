@@ -8,7 +8,7 @@ export const AppShell: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-astro-bg-primary text-astro-text-primary flex flex-col font-body">
+    <div className="min-h-screen bg-[#030A09] text-[#E8F4F0] flex flex-col font-body selection:bg-[#21E6D0] selection:text-[#030A09]">
       {/* Sidebar Navigation */}
       <Sidebar
         isCollapsed={isCollapsed}
@@ -18,17 +18,17 @@ export const AppShell: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div
+        className={`flex-1 flex flex-col min-w-0 bg-[#030A09] cyber-grid transition-all duration-300 ease-in-out ${
+          isCollapsed ? 'lg:pl-[68px]' : 'lg:pl-[240px]'
+        }`}
+      >
         <Topbar
           onOpenMobileNav={() => setMobileOpen(true)}
           isSidebarCollapsed={isCollapsed}
         />
 
-        <main
-          className={`flex-1 transition-all duration-200 ${
-            isCollapsed ? 'lg:pl-16' : 'lg:pl-60'
-          }`}
-        >
+        <main className="flex-1 min-w-0">
           <Outlet />
         </main>
       </div>

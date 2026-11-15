@@ -32,7 +32,7 @@ export const SimulationControls: React.FC<SimulationControlsProps> = ({
   const speeds = [0.5, 1.0, 2.0, 5.0, 10.0];
 
   return (
-    <div className="bg-white border border-astro-border-hairline rounded-sm p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+    <div className="bg-[#0A1715]/90 border border-[rgba(55,210,185,0.18)] rounded-sm p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4 backdrop-blur-sm">
       {/* Primary Lifecycle Controls */}
       <div className="flex flex-wrap items-center gap-2">
         {status === 'STOPPED' && (
@@ -68,7 +68,7 @@ export const SimulationControls: React.FC<SimulationControlsProps> = ({
       <div className="flex flex-wrap items-center gap-4">
         {/* Speed Multiplier Bar */}
         <div className="flex items-center space-x-1">
-          <span className="font-mono text-[10px] uppercase text-astro-text-tertiary mr-1">
+          <span className="font-mono text-[10px] uppercase text-[#8CA8A0] mr-1">
             SPEED:
           </span>
           {speeds.map((s) => (
@@ -78,8 +78,8 @@ export const SimulationControls: React.FC<SimulationControlsProps> = ({
               onClick={() => onSetSpeed(s)}
               className={`px-2 py-1 font-mono text-[11px] rounded-sm transition-colors ${
                 currentSpeed === s
-                  ? 'bg-astro-text-primary text-astro-bg-primary font-bold'
-                  : 'bg-astro-bg-subtle text-astro-text-secondary hover:text-astro-text-primary hover:bg-astro-bg-subtle/80'
+                  ? 'bg-[#21E6D0] text-[#030A09] font-bold'
+                  : 'bg-[#06110F] text-[#8CA8A0] border border-[rgba(55,210,185,0.2)] hover:text-[#E8F4F0] hover:border-[#21E6D0]/50'
               }`}
             >
               {s}x
@@ -88,18 +88,18 @@ export const SimulationControls: React.FC<SimulationControlsProps> = ({
         </div>
 
         {/* Astronaut Selector */}
-        <div className="flex items-center space-x-1.5 border-l border-astro-border-hairline pl-4">
-          <User className="w-3.5 h-3.5 text-astro-text-secondary" />
-          <span className="font-mono text-[10px] uppercase text-astro-text-tertiary">
+        <div className="flex items-center space-x-1.5 border-l border-[rgba(55,210,185,0.2)] pl-4">
+          <User className="w-3.5 h-3.5 text-[#21E6D0]" />
+          <span className="font-mono text-[10px] uppercase text-[#8CA8A0]">
             TARGET CREW:
           </span>
           <select
             value={currentAstronautId}
             onChange={(e) => onSetAstronaut(e.target.value)}
-            className="font-mono text-xs font-semibold bg-white border border-astro-border-hairline rounded-sm px-2 py-1 text-astro-text-primary outline-none focus:border-astro-border-focus"
+            className="font-mono text-xs font-semibold bg-[#06110F] border border-[rgba(55,210,185,0.25)] rounded-sm px-2 py-1 text-[#E8F4F0] outline-none focus:border-[#21E6D0]"
           >
             {SEED_ASTRONAUTS.map((astro) => (
-              <option key={astro.id} value={astro.id}>
+              <option key={astro.id} value={astro.id} className="bg-[#0A1715] text-[#E8F4F0]">
                 {astro.profile?.callsign}: {astro.profile?.full_name}
               </option>
             ))}

@@ -41,8 +41,8 @@ export const ScenarioSelector: React.FC<ScenarioSelectorProps> = ({
               onClick={() => onSelectScenario(scen.id)}
               className={`text-left p-3 rounded-sm border transition-all duration-150 relative flex flex-col justify-between ${
                 isSelected
-                  ? 'border-astro-text-primary bg-astro-bg-subtle ring-1 ring-astro-text-primary'
-                  : 'border-astro-border-hairline bg-white hover:border-astro-border-strong hover:bg-astro-bg-subtle/40'
+                  ? 'border-[#21E6D0] bg-[#0C2521] ring-1 ring-[#21E6D0]'
+                  : 'border-[rgba(55,210,185,0.18)] bg-[#06110F] hover:border-[#21E6D0]/50 hover:bg-[#0A1715]'
               } disabled:opacity-50 disabled:cursor-not-allowed`}
             >
               <div className="space-y-1.5 mb-2">

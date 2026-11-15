@@ -43,22 +43,22 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
 }) => {
   return (
     <div
-      className={`pb-5 border-b border-astro-border-hairline flex flex-col md:flex-row md:items-end justify-between gap-4 ${className}`}
+      className={`pb-5 border-b border-[#24E6D0]/18 flex flex-col md:flex-row md:items-end justify-between gap-4 ${className}`}
     >
       <div className="space-y-1">
         <div className="flex items-center space-x-2.5">
-          <h1 className="font-display text-xl md:text-2xl font-bold tracking-tight text-astro-text-primary">
+          <h1 className="font-space text-xl md:text-2xl font-bold tracking-tight text-[#F4FAF8] uppercase">
             {title}
           </h1>
           {badge && <div>{badge}</div>}
         </div>
-        {subtitle && <p className="font-body text-xs md:text-sm text-astro-text-secondary">{subtitle}</p>}
+        {subtitle && <p className="font-body text-xs md:text-sm text-[#91A9A4]">{subtitle}</p>}
         {metadata && metadata.length > 0 && (
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1.5 font-mono text-[10px] text-astro-text-tertiary">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1.5 font-mono text-[10px] text-[#5B7B75]">
             {metadata.map((item, idx) => (
               <span key={idx} className="flex items-center space-x-1">
-                <span className="uppercase">{item.label}:</span>
-                <span className="text-astro-text-primary font-semibold">{item.value}</span>
+                <span className="uppercase text-[#5B7B75]">{item.label}:</span>
+                <span className="text-[#8BFFE9] font-bold">{item.value}</span>
               </span>
             ))}
           </div>
@@ -77,13 +77,13 @@ export const SectionHeader: React.FC<{
   className?: string;
 }> = ({ title, description, action, className = '' }) => {
   return (
-    <div className={`flex items-center justify-between pb-2 border-b border-astro-border-hairline/60 ${className}`}>
+    <div className={`flex items-center justify-between pb-2.5 border-b border-[#24E6D0]/18 ${className}`}>
       <div>
-        <h3 className="font-display text-xs md:text-sm font-semibold tracking-tight text-astro-text-primary uppercase">
+        <h3 className="font-space text-xs md:text-sm font-bold tracking-tight text-[#F4FAF8] uppercase">
           {title}
         </h3>
         {description && (
-          <p className="font-body text-[11px] text-astro-text-secondary mt-0.5">{description}</p>
+          <p className="font-body text-[11px] text-[#91A9A4] mt-0.5">{description}</p>
         )}
       </div>
       {action && <div className="shrink-0">{action}</div>}

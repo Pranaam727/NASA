@@ -20,34 +20,34 @@ export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
   const colorMap: Record<StatusLevel, { dot: string; bg: string; text: string; border: string }> =
     {
       NOMINAL: {
-        dot: 'bg-astro-status-healthy',
-        bg: 'bg-astro-status-healthy/10',
-        text: 'text-astro-status-healthy',
-        border: 'border-astro-status-healthy/30',
+        dot: 'bg-[#24E6D0] shadow-[0_0_8px_#24E6D0]',
+        bg: 'bg-[#24E6D0]/15',
+        text: 'text-[#24E6D0]',
+        border: 'border-[#24E6D0]/30',
       },
       CAUTION: {
-        dot: 'bg-astro-status-caution',
-        bg: 'bg-astro-status-caution/10',
-        text: 'text-astro-status-caution',
-        border: 'border-astro-status-caution/30',
+        dot: 'bg-[#F5B94C] shadow-[0_0_8px_#F5B94C]',
+        bg: 'bg-[#F5B94C]/15',
+        text: 'text-[#F5B94C]',
+        border: 'border-[#F5B94C]/30',
       },
       CRITICAL: {
-        dot: 'bg-astro-status-critical',
-        bg: 'bg-astro-status-critical/10',
-        text: 'text-astro-status-critical',
-        border: 'border-astro-status-critical/30',
+        dot: 'bg-[#FF646E] shadow-[0_0_8px_#FF646E]',
+        bg: 'bg-[#FF646E]/15',
+        text: 'text-[#FF646E]',
+        border: 'border-[#FF646E]/30',
       },
       SIMULATED: {
-        dot: 'bg-astro-status-sandstone',
-        bg: 'bg-astro-status-sandstone/20',
-        text: 'text-[#7A6643]',
-        border: 'border-astro-status-sandstone/40',
+        dot: 'bg-[#8BFFE9] shadow-[0_0_8px_#8BFFE9]',
+        bg: 'bg-[#8BFFE9]/15',
+        text: 'text-[#8BFFE9]',
+        border: 'border-[#8BFFE9]/30',
       },
       INFO: {
-        dot: 'bg-astro-text-secondary',
-        bg: 'bg-astro-bg-subtle',
-        text: 'text-astro-text-secondary',
-        border: 'border-astro-border-hairline',
+        dot: 'bg-[#91A9A4]',
+        bg: 'bg-[#071311]',
+        text: 'text-[#91A9A4]',
+        border: 'border-[#24E6D0]/15',
       },
     };
 
@@ -55,7 +55,7 @@ export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
 
   return (
     <span
-      className={`inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-sm border font-mono uppercase tracking-wider ${
+      className={`inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-md border font-mono uppercase tracking-wider ${
         size === 'sm' ? 'text-[9px]' : 'text-[10px]'
       } ${style.bg} ${style.text} ${style.border}`}
     >
@@ -73,7 +73,7 @@ interface DataSourceLabelProps {
 }
 
 export const DataSourceLabel: React.FC<DataSourceLabelProps> = ({ source, isSimulated }) => {
-  const label = isSimulated ? 'SIMULATED' : source;
+  const label = isSimulated ? 'SIMULATOR' : source;
   const status: StatusLevel = isSimulated ? 'SIMULATED' : 'NOMINAL';
 
   return <StatusIndicator status={status} label={label} size="sm" />;
@@ -83,7 +83,7 @@ interface TrendIndicatorProps {
   direction: 'up' | 'down' | 'flat';
   delta?: string | number;
   unit?: string;
-  isInverseGood?: boolean; // e.g. lower heart rate can be good
+  isInverseGood?: boolean;
 }
 
 export const TrendIndicator: React.FC<TrendIndicatorProps> = ({
@@ -98,10 +98,10 @@ export const TrendIndicator: React.FC<TrendIndicatorProps> = ({
 
   const colorClass =
     direction === 'flat'
-      ? 'text-astro-text-secondary'
+      ? 'text-[#5B7B75]'
       : (isUp && isUpGood) || (isDown && !isUpGood)
-        ? 'text-astro-status-healthy'
-        : 'text-astro-status-caution';
+        ? 'text-[#24E6D0]'
+        : 'text-[#F5B94C]';
 
   return (
     <span className={`inline-flex items-center space-x-0.5 font-mono text-[11px] ${colorClass}`}>
@@ -145,11 +145,11 @@ export const MetricDisplay: React.FC<MetricDisplayProps> = ({
 }) => {
   return (
     <div
-      className={`bg-white border border-astro-border-hairline p-3.5 rounded-sm flex flex-col justify-between ${className}`}
+      className={`bg-[#0D1D1B] border border-[#24E6D0]/20 p-5 rounded-2xl shadow-cyberCard transition-all duration-300 hover:border-[#24E6D0]/50 hover:shadow-cyberCardHover flex flex-col justify-between ${className}`}
     >
       <div className="flex items-center justify-between mb-2">
-        <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-wider text-astro-text-secondary flex items-center space-x-1.5">
-          {Icon && <Icon className="w-3.5 h-3.5 text-astro-text-tertiary" />}
+        <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-wider text-[#91A9A4] flex items-center space-x-1.5 font-semibold">
+          {Icon && <Icon className="w-3.5 h-3.5 text-[#24E6D0]" />}
           <span>{label}</span>
         </span>
         <div className="flex items-center space-x-1">
@@ -158,25 +158,25 @@ export const MetricDisplay: React.FC<MetricDisplayProps> = ({
         </div>
       </div>
 
-      <div className="flex items-baseline space-x-1.5 my-1">
-        <span className="font-mono text-2xl md:text-3xl font-bold tracking-tight text-astro-text-primary tabular-nums">
+      <div className="flex items-baseline space-x-1.5 my-1.5">
+        <span className="font-mono text-2xl md:text-3xl font-bold tracking-tight text-[#F4FAF8] tabular-nums">
           {value}
         </span>
         {unit && (
-          <span className="font-mono text-xs text-astro-text-secondary tracking-normal">
+          <span className="font-mono text-xs text-[#91A9A4] tracking-normal font-medium">
             {unit}
           </span>
         )}
       </div>
 
-      <div className="flex items-center justify-between mt-1 pt-1 border-t border-astro-border-hairline/60">
+      <div className="flex items-center justify-between mt-2 pt-2 border-t border-[#24E6D0]/15">
         {trend && delta !== undefined ? (
           <TrendIndicator direction={trend} delta={delta} />
         ) : (
-          <span className="font-mono text-[10px] text-astro-text-tertiary">NOMINAL BAND</span>
+          <span className="font-mono text-[10px] text-[#5B7B75] uppercase">NOMINAL BAND</span>
         )}
         {subtext && (
-          <span className="font-mono text-[10px] text-astro-text-tertiary truncate">{subtext}</span>
+          <span className="font-mono text-[10px] text-[#5B7B75] truncate">{subtext}</span>
         )}
       </div>
     </div>
@@ -190,14 +190,14 @@ export const MeasurementDisplay: React.FC<{
   timestamp?: string;
 }> = ({ label, value, unit, timestamp }) => {
   return (
-    <div className="flex items-center justify-between py-1.5 border-b border-astro-border-hairline/60">
-      <span className="font-body text-xs text-astro-text-secondary">{label}</span>
+    <div className="flex items-center justify-between py-2 border-b border-[#24E6D0]/15">
+      <span className="font-body text-xs text-[#91A9A4] font-medium">{label}</span>
       <div className="flex items-center space-x-2">
-        <span className="font-mono text-xs font-semibold text-astro-text-primary tabular-nums">
-          {value} <span className="font-normal text-astro-text-secondary">{unit}</span>
+        <span className="font-mono text-xs font-bold text-[#F4FAF8] tabular-nums">
+          {value} <span className="font-normal text-[#5B7B75]">{unit}</span>
         </span>
         {timestamp && (
-          <span className="font-mono text-[10px] text-astro-text-tertiary">{timestamp}</span>
+          <span className="font-mono text-[10px] text-[#5B7B75]">{timestamp}</span>
         )}
       </div>
     </div>

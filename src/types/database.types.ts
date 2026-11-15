@@ -5,7 +5,7 @@
 
 import { DataSourceType, QualityStatus } from './telemetry';
 
-export type UserRole = 'ASTRONAUT' | 'MEDICAL_OFFICER' | 'MISSION_CONTROLLER';
+export type UserRole = 'ASTRONAUT' | 'MEDICAL_OFFICER' | 'MISSION_COMMANDER' | 'MISSION_CONTROLLER';
 export type AlertSeverity = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
 export type AlertStatus = 'ACTIVE' | 'ACKNOWLEDGED' | 'RESOLVED' | 'DISMISSED';
 export type MissionStatus = 'PLANNING' | 'ACTIVE' | 'COMPLETED' | 'ABORTED';
@@ -23,6 +23,34 @@ export interface Profile {
   avatar_url?: string;
   created_at: string;
   updated_at: string;
+}
+
+export interface AuthUser {
+  id: string;
+  name: string;
+  email: string;
+  role: UserRole;
+  callsign: string;
+  badge: string;
+  astronautId?: string;
+  isApproved: boolean;
+  mfaEnabled?: boolean;
+  mission?: string;
+  organization?: string;
+  specialization?: string;
+  avatar_url?: string;
+}
+
+export interface ApprovalRequest {
+  id: string;
+  userId: string;
+  fullName: string;
+  email: string;
+  role: UserRole;
+  requestedAt: string;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED';
+  invitationCodeUsed?: string;
+  metadata?: Record<string, unknown>;
 }
 
 // ============================================================================
@@ -367,3 +395,110 @@ export interface AuditLog {
   details: Record<string, unknown>;
   created_at: string;
 }
+
+// ============================================================================
+// 11. Daily Astronaut Self-Assessment
+// ============================================================================
+export interface DailySelfAssessment {
+  id: string;
+  astronaut_id: string;
+  date: string;
+  overall_wellbeing: number; // 1-10
+  sleep_quality: number; // 1-10
+  sleep_hours: number;
+  fatigue_level: number; // 1-10
+  pain_level: number; // 0-10
+  pain_locations: string[];
+  dizziness_or_vertigo: boolean;
+  vision_changes: boolean;
+  stress_level: number; // 1-10
+  mood_score: number; // 1-10
+  exercise_completed: boolean;
+  exercise_duration_minutes: number;
+  notes: string;
+  escalated_to_medical: boolean;
+  escalation_reason?: string;
+  created_at: string;
+}
+
+// ============================================================================
+// 12. Exercise & Musculoskeletal Logs
+// ============================================================================
+export interface ExerciseRecord {
+  id: string;
+  astronaut_id: string;
+  date: string;
+  exercise_type: 'ARED_SQUAT' | 'ARED_DEADLIFT' | 'ARED_BENCH' | 'CYCLE_ERGOMETER' | 'T2_TREADMILL';
+  duration_minutes: number;
+  load_kg_or_watts: number;
+  peak_heart_rate: number;
+  calories_burned: number;
+  notes?: string;
+}
+
+// ============================================================================
+// 13. Laboratory & Immune Biomarkers
+// ============================================================================
+export interface LaboratoryBiomarker {
+  id: string;
+  astronaut_id: string;
+  biomarker_name: string;
+  category: 'IMMUNE' | 'INFLAMMATORY' | 'METABOLIC' | 'HEMATOLOGY';
+  observed_value: number;
+  unit: string;
+  reference_low: number;
+  reference_high: number;
+  collection_timestamp: string;
+  is_abnormal: boolean;
+  source_instrument: string;
+}
+
+// ============================================================================
+// 14. Curated Medical Protocols
+// ============================================================================
+export interface MedicalProtocol {
+  id: string;
+  code: string;
+  title: string;
+  category: 'EMERGENCY' | 'COUNTERMEASURE' | 'ROUTINE' | 'ISOLATION';
+  severity: AlertSeverity;
+  version: string;
+  indications: string[];
+  steps: Array<{ stepNumber: number; instruction: string; critical: boolean }>;
+  contraindications: string[];
+  escalation_channel: string;
+}
+
+// ============================================================================
+// 15. NASA Research Evidence Records
+// ============================================================================
+export interface NASAResearchRecord {
+  id: string;
+  title: string;
+  program: 'NASA HRP' | 'NASA OSDR' | 'NASA GENELAB' | 'NASA TECHNICAL REPORTS';
+  authors: string;
+  publication_year: number;
+  abstract: string;
+  doi_or_url: string;
+  dataset_id?: string;
+  health_category: 'CARDIOVASCULAR' | 'RADIATION' | 'NEURO_OCULAR' | 'IMMUNE' | 'MUSCULOSKELETAL' | 'BEHAVIORAL';
+}
+
+// ============================================================================
+// 16. Health Twin Baseline Deviation
+// ============================================================================
+export interface HealthTwinDeviation {
+  metric: string;
+  currentValue: number;
+  baselineValue: number;
+  delta: number;
+  zScore: number;
+  unit: string;
+  status: 'NORMAL' | 'ELEVATED' | 'CRITICAL';
+  whatChanged: string;
+  whenChanged: string;
+  relevantCorrelations: string[];
+  requiresReview: boolean;
+  recommendedAction: string;
+}
+

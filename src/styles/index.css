@@ -6,17 +6,47 @@
 
 @layer base {
   html {
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    background-color: #030A09;
+    color: #E8F4F0;
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Universal high-contrast focus indicator */
+  body {
+    background-color: #030A09;
+    color: #E8F4F0;
+    overflow-x: hidden;
+    selection-background-color: #21E6D0;
+    selection-color: #030A09;
+  }
+
+  ::selection {
+    background-color: #21E6D0;
+    color: #030A09;
+  }
+
+  /* Universal cyber focus indicator */
   :focus-visible {
-    outline: 2px solid var(--color-border-focus);
+    outline: 2px solid #21E6D0;
     outline-offset: 2px;
+  }
+
+  /* Cyber Glow Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030A09;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0D1E1A;
+    border-radius: 9999px;
+    border: 1px solid rgba(55, 210, 185, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #21E6D0;
   }
 }
 
@@ -27,24 +57,43 @@
     font-variant-numeric: tabular-nums;
   }
 
-  /* Micro hairline dividers */
-  .hairline-b {
-    border-bottom: 1px solid var(--color-border-hairline);
+  /* Cyber Technical Dotted Background */
+  .cyber-dots {
+    background-image: radial-gradient(rgba(33, 230, 208, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 
-  .hairline-t {
-    border-top: 1px solid var(--color-border-hairline);
+  /* Cyber Fine Technical Grid */
+  .cyber-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(55, 210, 185, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(55, 210, 185, 0.04) 1px, transparent 1px);
   }
 
-  .hairline-l {
-    border-left: 1px solid var(--color-border-hairline);
+  /* Glassmorphism Panel */
+  .cyber-glass {
+    background: rgba(10, 23, 21, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(55, 210, 185, 0.18);
   }
 
-  .hairline-r {
-    border-right: 1px solid var(--color-border-hairline);
+  /* High-tier Glowing Glass Panel */
+  .cyber-glass-glow {
+    background: rgba(13, 30, 26, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(33, 230, 208, 0.3);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(33, 230, 208, 0.1);
   }
 
-  .hairline-all {
-    border: 1px solid var(--color-border-hairline);
+  /* Scanline effect */
+  .cyber-scanlines {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
   }
 }

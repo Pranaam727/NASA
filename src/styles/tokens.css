@@ -1,38 +1,64 @@
 :root {
   /* ==========================================================================
-     ASTROCARE COLOR TOKENS (Swiss Editorial × Aerospace Instrumentation)
+     ASTROCARE GLOBAL DESIGN SYSTEM (AEGIS AI STYLE)
      ========================================================================== */
-  --color-bg-primary: #F3F0E8;     /* Warm Ivory Canvas */
-  --color-bg-secondary: #EAE6DC;   /* Soft Stone Surface */
-  --color-bg-surface: #FFFFFF;     /* Clean Card Surfaces */
-  --color-bg-subtle: #ECE8DE;      /* Micro Hover / Active State */
+  --color-bg-primary: #030A09;         /* Deep space black-emerald canvas */
+  --color-bg-secondary: #071412;       /* Secondary container */
+  --color-bg-sidebar: #06110F;         /* Sidebar background */
+  --color-bg-header: #06110F;          /* Header background */
+  --color-bg-panel: #0A1715;           /* Primary panel surface */
+  --color-bg-panel-primary: #0A1715;   /* Primary panel surface */
+  --color-bg-panel-secondary: #0D1E1A; /* Secondary panel surface */
+  --color-bg-panel-elevated: #10251F;  /* Elevated panel surface */
+  --color-bg-card: #0D1E1A;            /* Card glassmorphic background */
+  --color-bg-surface: #0A1715;         /* Surface */
+  --color-bg-dark: #030A09;            /* Pure dark base */
+  --color-bg-subtle: #10251F;          /* Hover / subdued state */
 
-  --color-text-primary: #242824;   /* Deep Graphite Text */
-  --color-text-secondary: #73766F; /* Muted Graphite Text */
-  --color-text-tertiary: #9A9E96;  /* Faint Metadata */
-  --color-text-inverted: #F3F0E8;  /* Ivory Inverted Text */
+  --color-accent-primary: #21E6D0;     /* Glowing cyan / turquoise */
+  --color-accent-secondary: #00AFA0;   /* Deep emerald accent */
+  --color-accent-highlight: #8BFFE9;   /* Bright cyan highlight */
 
-  --color-border-hairline: #D8D4C9;/* Fine Hairline Divider */
-  --color-border-strong: #8C9086;  /* Emphasized Divider */
-  --color-border-focus: #242824;   /* High-Contrast Focus Ring */
+  --color-text-primary: #E8F4F0;       /* Primary text */
+  --color-text-secondary: #8CA8A0;     /* Secondary text */
+  --color-text-tertiary: #57766D;      /* Muted metadata */
+  --color-text-muted: #57766D;         /* Muted text */
+  --color-text-inverted: #030A09;      /* Inverted deep dark */
 
-  --color-status-healthy: #738174; /* Sage Green (Nominal) */
-  --color-status-caution: #D16C48; /* Signal Terracotta (Warning / >2σ) */
-  --color-status-critical: #B9473E;/* Critical Red (Life Threat) */
-  --color-status-sandstone: #D8CBAF;/* Sandstone Structural Badge */
+  --color-border: rgba(55, 210, 185, 0.18);
+  --color-border-hairline: rgba(55, 210, 185, 0.18); /* Subtle cyan border */
+  --color-border-medium: rgba(33, 230, 208, 0.35);   /* Active glowing border */
+  --color-border-strong: #21E6D0;                    /* Strong highlight border */
+  --color-border-focus: #8BFFE9;
 
-  /* ==========================================================================
-     TYPOGRAPHY TOKENS
-     ========================================================================== */
-  --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Biomedical Status Bands */
+  --color-status-healthy: #21E6D0;     /* Nominal cyan */
+  --color-status-caution: #F3BB57;     /* Warning amber */
+  --color-status-warning: #F3BB57;     /* Warning amber */
+  --color-status-critical: #FF6475;    /* Critical red */
+  --color-status-info: #00AFA0;        /* Emerald info */
+
+  /* Typography Tokens */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
-  /* ==========================================================================
-     SPACING & ELEVATION TOKENS
-     ========================================================================== */
-  --space-hairline: 1px;
-  --radius-sharp: 0px;
-  --radius-micro: 2px;
-  --radius-card: 4px;
+  /* Spacing & Radii Tokens */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 16px;
+  --radius-panel: 20px;
+  --radius-full: 9999px;
+
+  /* Sidebar Design Tokens */
+  --color-sidebar-bg: #06110F;
+  --color-sidebar-surface: #0A1715;
+  --color-sidebar-active: #0C2521;
+  --color-sidebar-cyan: #21E6D0;
+  --color-sidebar-emerald: #00AFA0;
+  --color-sidebar-text: #E8F4F0;
+  --color-sidebar-muted: #8CA8A0;
+  --color-sidebar-border: rgba(55, 210, 185, 0.18);
+  --color-sidebar-active-border: rgba(33, 230, 208, 0.45);
+  --color-sidebar-active-glow: 0 0 16px rgba(33, 230, 208, 0.22);
 }
